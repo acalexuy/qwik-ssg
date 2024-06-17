@@ -2,26 +2,9 @@ import { component$ } from "@builder.io/qwik";
 import { Link, StaticGenerateHandler, routeLoader$ } from "@builder.io/qwik-city";
 
 export const useArticleLoader = routeLoader$(async ({ params }) => {
-  const fakeData = {
-    news1: {
-      heading: 'The News 1',
-      content: 'This is news 1'
-    },
-    news2: {
-      heading: 'The News 2',
-      content: 'This is news 2'
-    },
-    news3: {
-      heading: 'The News 3',
-      content: 'This is news 3'
-    },
-    news4: {
-      heading: 'The News 4',
-      content: 'This is news 4'
-    },
-  }
-
-  return fakeData[params?.slug as keyof typeof fakeData]
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.slug}`);
+  const product = await res.json();
+  return product;
 });
 
 export default component$(() => {
@@ -29,22 +12,22 @@ export default component$(() => {
 
   return (
     <>
-      <h1>{data.heading}</h1>
-      <p>{data.content}</p>
+      <h1>{data.title}</h1>
+      <p>{data.body}</p>
 
       <h3>Related News</h3>
       <ul>
-        <li><Link href="/news/news1">Go to news 1</Link></li>
-        <li><Link href="/news/news2">Go to news 2</Link></li>
-        <li><Link href="/news/news3">Go to news 3</Link></li>
-        <li><Link href="/news/news4">Go to news 4</Link></li>
+        <li><Link href="/news/1">Go to news 1</Link></li>
+        <li><Link href="/news/2">Go to news 2</Link></li>
+        <li><Link href="/news/3">Go to news 3</Link></li>
+        <li><Link href="/news/4">Go to news 4</Link></li>
       </ul>
     </>
   );
 });
 
 export const onStaticGenerate: StaticGenerateHandler = async () => {
-  const slugs = ['news1', 'news2', 'news3', 'news4']
+  const slugs = ['1', '2', '3', '4']
 
   const params = slugs?.map((slug) => {
     return {
