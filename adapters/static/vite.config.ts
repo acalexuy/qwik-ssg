@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://qwikstarter-brkx--5173--9e2d28a3.local-credentialless.webcontainer.io",
+        origin: "https://qwik-ssg-six.vercel.app",
       }),
     ],
   };
