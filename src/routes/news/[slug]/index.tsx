@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, StaticGenerateHandler, routeLoader$ } from "@builder.io/qwik-city";
 
-export const useArticleLoader = routeLoader$(async ({ params, status, url }) => {
+export const useArticleLoader = routeLoader$(async ({ params }) => {
   const fakeData = {
     news1: {
       heading: 'The News 1',
