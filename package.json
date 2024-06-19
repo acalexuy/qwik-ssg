@@ -35,5 +35,8 @@
     "undici": "5.28.2",
     "vite": "4.5.2",
     "vite-tsconfig-paths": "4.2.0"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1"
   }
 }

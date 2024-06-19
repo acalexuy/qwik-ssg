@@ -1,0 +1,28 @@
+{
+  "news": [
+    {
+      "id": "1",
+      "title": "The news 1",
+      "content": "The content of news 1",
+      "category": "home-loans"
+    },
+    {
+      "id": "2",
+      "title": "The news 2",
+      "content": "The content of news 2",
+      "category": "home-loans"
+    },
+    {
+      "id": "3",
+      "title": "The news 3",
+      "content": "The content of news 3",
+      "category": "home-loans"
+    },
+    {
+      "id": "4",
+      "title": "The news 4",
+      "content": "The content of news 4",
+      "category": "home-loans"
+    }
+  ]
+}

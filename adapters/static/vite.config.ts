@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: "https://qwik-ssg-six.vercel.app",
+        origin: "https://qwik-ssg-sample.vercel.app",
       }),
     ],
   };
